@@ -1,0 +1,18 @@
+﻿# New Zealander culture modifier types.
+state_nzl_new_zealander_standard_of_living_add = {
+	color = good
+	decimals = 1
+	game_data = { ai_value = 0 }
+}
+
+country_nzl_new_zealander_cultural_acceptance_add = {
+	color = good
+	decimals = 1
+	game_data = { ai_value = 0 }
+}
+
+country_fervor_target_nzl_new_zealander_add = {
+	color = good
+	decimals = 1
+	game_data = { ai_value = 0 }
+}

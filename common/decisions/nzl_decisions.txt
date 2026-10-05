@@ -1,0 +1,36 @@
+﻿# Secure Sovereignty over New Zealand
+nzl_secure_sovereignty_decision = {
+	is_shown = {
+		c:GBR = ROOT
+		NOT = { is_country_alive = c:NZL }
+	}
+
+	possible = {
+		NOT = { is_country_alive = c:NZL }
+
+		is_at_war = no
+
+		any_state_in_new_zealand = {
+			owner = { is_subject_of = ROOT }
+		}
+
+		c:UNT = {
+			is_at_war = no
+			is_country_alive = yes
+			is_subject = no
+		}
+	}
+
+	when_taken = {
+		trigger_event = { id = nzl.1 days = 0 popup = yes }
+	}
+
+	ai_chance = {
+		value = 0
+
+		if = {
+			limit = { game_date >= 1840.2.6 }
+			add = 100
+		}
+	}
+}

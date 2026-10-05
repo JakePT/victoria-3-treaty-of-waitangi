@@ -1,0 +1,23 @@
+﻿# Treaties -- Add British a guarantee of independence for United Tribes.
+TREATIES = {
+	create_treaty = {
+		name = nzl_treaty_name_he_whakaputanga
+
+		first_country = c:GBR
+		second_country = c:UNT
+
+		is_draft = no
+
+		entered_into_force_on = 1835.10.28
+
+		binding_period = { years = 10 }
+
+		articles_to_create = {
+			{
+				article = guarantee_independence
+				source_country = c:GBR
+				target_country = c:UNT
+			}
+		}
+	}
+}

@@ -1,0 +1,41 @@
+﻿# Federate Australia -- A version that doesn't require New Zealand to complete.
+REPLACE:je_australia_gbr = {
+	icon = "gfx/interface/icons/event_icons/waving_flag.dds"
+
+	group = je_group_historical_content
+
+	is_shown_when_inactive = {
+		any_subject_or_below = {
+			capital = { is_in_geographic_region = geographic_region_australasia }
+			count >= 2
+		}
+		NOT = {
+			capital = { is_in_geographic_region = geographic_region_australasia }
+		}
+	}
+
+	possible = { has_technology_researched = nationalism }
+
+	scripted_button = je_australia_unite_aus_button
+
+	complete = {
+		any_country_in_australasia = {
+			is_subject_of = ROOT
+			owns_entire_state_region = STATE_NEW_SOUTH_WALES
+			owns_entire_state_region = STATE_VICTORIA
+			owns_entire_state_region = STATE_TASMANIA
+			owns_entire_state_region = STATE_QUEENSLAND
+			owns_entire_state_region = STATE_SOUTH_AUSTRALIA
+			owns_entire_state_region = STATE_WESTERN_AUSTRALIA
+			owns_entire_state_region = STATE_NORTHERN_TERRITORY
+		}
+	}
+
+	on_complete = {
+		trigger_event = { id = can_aus.8 }
+	}
+
+	weight = 100
+
+	should_be_pinned_by_default_uninvolved_or_context = yes
+}

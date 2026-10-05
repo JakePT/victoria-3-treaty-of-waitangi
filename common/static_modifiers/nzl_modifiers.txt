@@ -1,0 +1,30 @@
+﻿# New Zealander culture modifiers.
+nzl_new_zealander_standard_of_living_modifier_positive = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+	state_nzl_new_zealander_standard_of_living_add = 1
+}
+
+nzl_new_zealander_standard_of_living_modifier_negative = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+	state_nzl_new_zealander_standard_of_living_add = 1
+}
+
+nzl_new_zealander_cultural_acceptance_modifier_positive = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+	country_nzl_new_zealander_cultural_acceptance_add = 1
+}
+
+nzl_new_zealander_cultural_acceptance_modifier_negative = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+	country_nzl_new_zealander_cultural_acceptance_add = 1
+}
+
+nzl_new_zealander_fervor_target_modifier_positive = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_positive.dds"
+	country_fervor_target_nzl_new_zealander_add = 1
+}
+
+nzl_new_zealander_fervor_target_modifier_negative = {
+	icon = "gfx/interface/icons/timed_modifier_icons/modifier_flag_negative.dds"
+	country_fervor_target_nzl_new_zealander_add = 1
+}

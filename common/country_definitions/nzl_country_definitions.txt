@@ -1,0 +1,8 @@
+﻿# New Zealand -- Change primary culture and colour.
+REPLACE:NZL = {
+	color = { 30 30 30 }
+	country_type = colonial
+	tier = principality
+	capital = STATE_NORTH_ISLAND
+	cultures = { nzl_new_zealander }
+}

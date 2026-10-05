@@ -1,0 +1,9 @@
+﻿# Diplomacy -- Remove British protectorate over United Tribes.
+DIPLOMACY = {
+	c:GBR ?= {
+		remove_diplomatic_pact = {
+			country = c:UNT
+			type = protectorate
+		}
+	}
+}

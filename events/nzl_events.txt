@@ -1,0 +1,373 @@
+﻿namespace = nzl
+
+# The Treaty of Waitangi
+nzl.1 = {
+	type = country_event
+	placement = ROOT
+
+	title = nzl.1.t
+	desc = nzl.1.d
+	flavor = nzl.1.f
+
+	duration = 3
+
+	event_image = { video = "asia_westerners_arriving" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	minor_left_icon = ROOT
+	minor_right_icon = scope:nzl_target
+
+	trigger = { }
+
+	immediate = {
+		# Save Great Britain in scope.
+		save_scope_as = nzl_overlord
+		random_primary_culture = { save_scope_as = nzl_overlord_culture }
+		religion = { save_scope_as = nzl_overlord_religion }
+
+		# Save United Tribes in scope.
+		c:UNT = {
+			save_scope_as = nzl_target
+			random_primary_culture = { save_scope_as = nzl_target_culture }
+		}
+
+		# Choose a state to establish New Zealand in.
+		random_state_in_new_zealand = {
+			limit = {
+				owner = {
+					is_subject_of = scope:nzl_overlord
+					NOT = { scope:nzl_target = this }
+				}
+			}
+
+			owner = { save_scope_as = nzl_subject }
+			save_scope_as = nzl_state
+		}
+
+		# Create New Zealand.
+		create_country = {
+			tag = NZL
+			origin = scope:nzl_subject
+			state = scope:nzl_state
+		}
+
+		c:NZL = { save_scope_as = nzl_colony }
+
+		# Make New Zealand a colony of Great Britain.
+		scope:nzl_overlord = {
+			create_diplomatic_pact = {
+				country = scope:nzl_colony
+				type = colony
+			}
+		}
+
+		# Set up New Zealand's government and strategy.
+		scope:nzl_colony = {
+			if = {
+				limit = { game_date <= 1842.9.10 }
+
+				create_character = {
+					template = nzl_william_hobson
+
+					on_created = {
+						set_character_as_ruler = yes
+						set_variable = { name = colonial_governor_term value = 0 }
+					}
+				}
+			}
+			else = {
+				create_character = {
+					template = nzl_colonial_governor
+
+					on_created = {
+						set_character_as_ruler = yes
+						set_variable = { name = colonial_governor_term value = 0 }
+					}
+				}
+			}
+
+			every_interest_group = {
+				limit = { is_in_government = yes }
+				remove_ruling_interest_group = yes
+			}
+
+			ig:ig_armed_forces ?= { add_ruling_interest_group = yes }
+			ig:ig_devout ?= { set_interest_group_name = ig_anglican_church }
+
+			random_primary_culture = { save_scope_as = nzl_culture }
+
+			set_secret_goal = {
+				country = scope:nzl_overlord
+				secret_goal = comply
+			}
+
+			set_strategy = ai_strategy_agricultural_expansion
+			set_strategy = ai_strategy_subject_overlord_compliance
+			set_strategy = ai_strategy_conservative_agenda
+		}
+
+		# Transfer claims and homelands to New Zealand.
+		every_state_region_in_new_zealand = {
+			every_country = {
+				limit = {
+					has_claim = PREV
+					is_subject_of = scope:nzl_overlord
+				}
+
+				PREV = { remove_claim = PREV }
+			}
+
+			add_claim = scope:nzl_colony
+			add_homeland = scope:nzl_culture
+		}
+
+		# Convert all pops with shared heritage into New Zealanders.
+		every_state_in_new_zealand = {
+			every_scope_pop = {
+				limit = {
+					culture = { shares_heritage_trait_group_with_any_primary_culture = scope:nzl_overlord }
+				}
+
+				change_pop_culture = {
+					target = scope:nzl_culture
+					value = 1
+				}
+			}
+		}
+
+		# Save a British rival in scope for flavour text.
+		c:FRA = { save_scope_as = nzl_rival }
+
+		random_country = {
+			limit = {
+				has_diplomatic_pact = {
+					who = scope:nzl_overlord
+					type = rivalry
+				}
+			}
+
+			save_scope_as = nzl_rival
+		}
+
+		scope:nzl_rival = {
+			random_primary_culture = { save_scope_as = nzl_rival_culture }
+		}
+	}
+
+	# Acknowledge.
+	option = {
+		name = nzl.1.a
+
+		default_option = yes
+		ai_chance = { base = 100 }
+	}
+
+	# Play as New Zealand.
+	option = {
+		name = nzl.1.b
+
+		default_option = no
+		ai_chance = { base = 0 }
+
+		trigger = {
+			is_player = yes
+
+			scope:nzl_colony ?= {
+				is_country_alive = yes
+				is_player = no
+			}
+		}
+
+		if = {
+			limit = {
+				is_player = yes
+
+				scope:nzl_colony ?= {
+					is_country_alive = yes
+					is_player = no
+				}
+			}
+
+			play_as = scope:nzl_colony
+		}
+	}
+
+	# Trigger events for United Tribes and New South Wales.
+	after = {
+		scope:nzl_subject = {
+			trigger_event = { id = nzl.3 popup = yes }
+		}
+
+		scope:nzl_target = {
+			trigger_event = { id = nzl.2 popup = yes }
+		}
+	}
+}
+
+# Te Tiriti o Waitangi
+nzl.2 = {
+	type = country_event
+	placement = ROOT
+
+	title = nzl.2.t
+	desc = nzl.2.d
+	flavor = nzl.2.f
+
+	duration = 3
+
+	event_image = { video = "asia_westerners_arriving" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	minor_left_icon = ROOT
+	minor_right_icon = scope:nzl_colony
+
+	trigger = { }
+
+	immediate = { }
+
+	# Accept annexation and play as New Zealand.
+	option = {
+		name = nzl.2.a
+
+		ai_chance = { base = 100 }
+		default_option = no
+
+		# Annex United Tribes to New Zealand and addd Treaty of Waitangi law amendment.
+		scope:nzl_colony = {
+			annex = ROOT
+
+			active_law:lawgroup_citizenship = {
+				add_amendment = {
+					sponsor = PREV.ig:ig_devout
+					type = nzl_amendment_treaty_of_waitangi
+				}
+			}
+		}
+
+		# Add shared tradition trait to New Zealand cultures.
+		scope:nzl_culture = {
+			add_tradition_trait = nzl_tradition_waitangi
+		}
+
+		every_primary_culture = {
+			add_tradition_trait = nzl_tradition_waitangi
+		}
+
+		# Play as New Zealand.
+		if = {
+			limit = { is_player = yes }
+			play_as = scope:nzl_colony
+		}
+	}
+
+	# Reject the treaty and stay independent.
+	option = {
+		name = nzl.2.b
+
+		ai_chance = { base = 0 }
+		default_option = yes
+
+		# Damage relations with Britain and New Zealand.
+		ROOT = {
+			change_relations = {
+				country = scope:nzl_overlord
+				value = -30
+			}
+
+			change_relations = {
+				country = scope:nzl_colony
+				value = -30
+			}
+		}
+
+		# Withdraw Britain's guarantee of independence.
+		scope:nzl_overlord = {
+			every_scope_treaty = {
+				limit = {
+					any_scope_article = {
+						has_type = guarantee_independence
+						source_country = scope:nzl_overlord
+						target_country = ROOT
+					}
+				}
+
+				withdraw = {
+					apply_break_penalties = no
+					country = PREV
+				}
+			}
+		}
+
+		# Set New Zealand's goals towards United Tribes.
+		hidden_effect = {
+			scope:nzl_colony = {
+				set_secret_goal = {
+					country = ROOT
+					secret_goal = conquer
+				}
+			}
+		}
+	}
+}
+
+# The Colony of New Zealand
+nzl.3 = {
+	type = country_event
+	placement = ROOT
+
+	title = nzl.3.t
+	desc = nzl.3.d
+	flavor = nzl.3.f
+
+	duration = 3
+
+	event_image = { video = "unspecific_signed_contract" }
+	on_created_soundeffect = "event:/SFX/UI/Alerts/event_appear"
+	icon = "gfx/interface/icons/event_icons/event_map.dds"
+
+	minor_left_icon = ROOT
+	minor_right_icon = scope:nzl_colony
+
+	trigger = { }
+
+	immediate = { }
+
+	# Acknowledge.
+	option = {
+		name = nzl.3.a
+
+		default_option = yes
+		ai_chance = { base = 100 }
+	}
+
+	# Play as New Zealand.
+	option = {
+		name = nzl.3.b
+		default_option = no
+		ai_chance = { base = 0 }
+
+		trigger = {
+			is_player = yes
+
+			scope:nzl_colony ?= {
+				is_country_alive = yes
+				is_player = no
+			}
+		}
+
+		if = {
+			limit = {
+				is_player = yes
+
+				scope:nzl_colony ?= {
+					is_country_alive = yes
+					is_player = no
+				}
+			}
+
+			play_as = scope:nzl_colony
+		}
+	}
+}

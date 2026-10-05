@@ -1,0 +1,12 @@
+﻿# States -- Remove Australian homelands from New Zealand.
+STATES = {
+	s:STATE_NORTH_ISLAND = {
+		add_claim = c:NSW
+		remove_claim = c:WAS
+		remove_homeland = cu:australian
+	}
+
+	s:STATE_SOUTH_ISLAND = {
+		remove_homeland = cu:australian
+	}
+}

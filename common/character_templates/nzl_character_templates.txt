@@ -1,0 +1,28 @@
+﻿# William Hobson
+nzl_william_hobson = {
+	first_name = William
+	last_name = Hobson
+	birth_date = 1792.9.26
+	historical = yes
+	female = no
+	home_region = STATE_LEINSTER
+	culture = cu:british
+	religion = rel:protestant
+	ideology = ideology_moderate
+	interest_group = ig_armed_forces
+	role = character_role_admiral
+	traits = { special_character_colonial_military brave sickly }
+	trait_generation = { }
+}
+
+# Fallback governor
+nzl_colonial_governor = {
+	first_name = culture
+	last_name = culture
+	female = no
+	culture = scope:nzl_overlord_culture
+	religion = scope:nzl_overlord_religion
+	interest_group = ig_armed_forces
+	traits = { special_character_colonial_military political_appointee }
+	trait_generation = { }
+}

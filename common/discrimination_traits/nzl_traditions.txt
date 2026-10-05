@@ -1,0 +1,4 @@
+﻿# Treaty of Waitangi
+nzl_tradition_waitangi = {
+    type = tradition
+}

@@ -1,0 +1,131 @@
+﻿# New Zealander
+nzl_new_zealander = {
+	color = { 30 30 30 }
+
+	religion = protestant
+
+	heritage = heritage_british
+	language = language_anglophone
+	traditions = { }
+
+	obsessions = { tea }
+
+	# Most popular names from 1848-2018 excluding names not found in the top 10 of any year between 1900-1918.
+	male_common_first_names = {
+		Andrew
+		Arthur
+		Brian
+		Charles
+		Christopher
+		Daniel
+		David
+		Edward
+		George
+		Henry
+		Ian
+		James
+		John
+		Joseph
+		Mark
+		Matthew
+		Michael
+		Paul
+		Peter
+		Richard
+		Robert
+		Samuel
+		Stephen
+		Thomas
+		William
+	}
+
+	# Most popular names from 1848-2018 excluding names not found in the top 10 of any year between 1900-1918.
+	female_common_first_names = {
+		Alice
+		Anna
+		Annie
+		Barbara
+		Catherine
+		Charlotte
+		Dorothy
+		Elizabeth
+		Ellen
+		Emily
+		Emma
+		Florence
+		Grace
+		Hannah
+		Helen
+		Jane
+		Kathleen
+		Margaret
+		Mary
+		Patricia
+		Rachel
+		Rebecca
+		Sarah
+		Shirley
+		Susan
+	}
+
+	# Posh-sounding names of lifetime appointees to the Legislative Council 1853-1891.
+	noble_last_names = {
+		Acland
+		Barnicoat
+		Blakiston
+		Chetham_Strode
+		Coote
+		Fitzherbert
+		Gisborne
+		Hawdon
+		Mantell
+		Menzies
+		Osborne_Gibbes
+		Pillans
+		Prendergast
+		Richmond
+		Seymour
+		Watts_Russell
+		Whitmore
+	}
+
+	# Top 30 surnames in World War I Cenotaph records.
+	common_last_names = {
+		Anderson
+		Brown
+		Campbell
+		Clark
+		Harris
+		Hill
+		Johnson
+		Johnston
+		Jones
+		King
+		Martin
+		McDonald
+		McKenzie
+		Mitchell
+		Moore
+		Robertson
+		Robinson
+		Scott
+		Smith
+		Stewart
+		Taylor
+		Thompson
+		Thomson
+		Walker
+		Watson
+		White
+		Williams
+		Wilson
+		Wright
+		Young
+	}
+
+	graphics = european
+
+	ethnicities = {
+		1 = caucasian
+	}
+}
