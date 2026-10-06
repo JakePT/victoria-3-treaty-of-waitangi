@@ -2,12 +2,11 @@
 nzl_secure_sovereignty_decision = {
 	is_shown = {
 		c:GBR = ROOT
-		NOT = { is_country_alive = c:NZL }
+		exists = c:UNT
+		NOT = { exists = c:NZL }
 	}
 
 	possible = {
-		NOT = { is_country_alive = c:NZL }
-
 		is_at_war = no
 
 		any_state_in_new_zealand = {
@@ -16,7 +15,6 @@ nzl_secure_sovereignty_decision = {
 
 		c:UNT = {
 			is_at_war = no
-			is_country_alive = yes
 			is_subject = no
 		}
 	}
