@@ -303,6 +303,8 @@ nzl.2 = {
 		# Set New Zealand's goals towards United Tribes.
 		hidden_effect = {
 			scope:nzl_colony = {
+				post_notification = nzl_treaty_of_waitangi_rejected
+
 				set_secret_goal = {
 					country = ROOT
 					secret_goal = conquer

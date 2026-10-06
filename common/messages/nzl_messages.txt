@@ -1,0 +1,6 @@
+﻿# Treaty of Waitangi Rejected
+nzl_treaty_of_waitangi_rejected = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/secession.dds"
+	notification_type = toast
+}

@@ -48,6 +48,11 @@
   nzl.3.a: "We will not inspect them too narrowly." # Robert Peel in a House of Commons debate on New Zealand, quoting Edmund Burke regarding the North American colonies.
   nzl.3.b: "Onward." # New Zealand Coat of Arms 1911–1956.
 
+  # Notifications
+  notification_nzl_treaty_of_waitangi_rejected_name: "Treaty of Waitangi Rejected"
+  notification_nzl_treaty_of_waitangi_rejected_desc: "The [GetCulture('maori').GetNameNoFormatting] chiefs of [SCOPE.sCountry('nzl_target').GetName] have refused to sign the Treaty of Waitangi and join [SCOPE.sCountry('nzl_colony').GetName], damaging our [concept_relations]."
+  notification_nzl_treaty_of_waitangi_rejected_tooltip: "#header $notification_nzl_treaty_of_waitangi_rejected_name$#!\n$TOOLTIP_DELIMITER$\n$notification_nzl_treaty_of_waitangi_rejected_tooltip$"
+
   # Law amendments
   nzl_amendment_treaty_of_waitangi: "Treaty of Waitangi"
   nzl_amendment_treaty_of_waitangi_desc: "Representatives of the Crown have promised the [GetCulture('maori').GetNameNoFormatting] the full rights and privileges all $GBR_ADJ$ subjects are entitled to."
