@@ -7,6 +7,8 @@ nzl_secure_sovereignty_decision = {
 	}
 
 	possible = {
+		country_has_monarchy_law = yes
+		has_institution = institution_colonial_affairs
 		is_at_war = no
 
 		any_state_in_new_zealand = {
