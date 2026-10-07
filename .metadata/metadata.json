@@ -1,11 +1,16 @@
 {
   "name": "Treaty of Waitangi",
-  "id": "helmutvondandy.treatyofwaitangi",
+  "id": "com.github.jakept.victoria-3-treaty-of-waitangi",
   "version": "0.1.0",
   "game_id": "victoria3",
-  "supported_game_version": "1.14.0+",
+  "supported_game_version": "1.14.*",
   "short_description": "Content to support playing as New Zealand after starting as Great Britain, New South Wales, or the United Tribes; centered on the Treaty of Waitangi.",
-  "tags": [],
+  "tags": [
+    "Cultures and Religions",
+    "Diplomacy",
+    "Events",
+    "Historical"
+  ],
   "relationships": [],
   "game_custom_data": {
     "multiplayer_synchronized": true
