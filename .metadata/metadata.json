@@ -3,7 +3,7 @@
   "id": "com.github.jakept.victoria-3-treaty-of-waitangi",
   "version": "0.1.0",
   "game_id": "victoria3",
-  "supported_game_version": "1.14.*",
+  "supported_game_version": "1.13.*",
   "short_description": "Content to support playing as New Zealand after starting as Great Britain, New South Wales, or the United Tribes; centered on the Treaty of Waitangi.",
   "tags": [
     "Cultures and Religions",
