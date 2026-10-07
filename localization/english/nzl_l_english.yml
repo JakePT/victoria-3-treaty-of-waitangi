@@ -58,7 +58,7 @@
 
   # Law amendments
   nzl_amendment_treaty_of_waitangi: "Treaty of Waitangi"
-  nzl_amendment_treaty_of_waitangi_desc: "Representatives of the Crown have promised the [GetCulture('maori').GetNameNoFormatting] the full rights and privileges all $GBR_ADJ$ subjects are entitled to."
+  nzl_amendment_treaty_of_waitangi_desc: "Representatives of the Crown have promised the [GetCulture('maori').GetNameNoFormatting] the full rights and privileges that all $GBR_ADJ$ subjects are entitled to."
 
   # Historical treaties
   nzl_treaty_name_he_whakaputanga: "He Whakaputanga" # Declaration of the Independence of New Zealand.
