@@ -49,9 +49,12 @@
   nzl.3.b: "Onward." # New Zealand Coat of Arms 1911–1956.
 
   # Notifications
-  notification_nzl_treaty_of_waitangi_rejected_name: "Treaty of Waitangi Rejected"
-  notification_nzl_treaty_of_waitangi_rejected_desc: "The [GetCulture('maori').GetNameNoFormatting] chiefs of [SCOPE.sCountry('nzl_target').GetName] have refused to sign the Treaty of Waitangi and join [SCOPE.sCountry('nzl_colony').GetName], damaging our [concept_relations]."
-  notification_nzl_treaty_of_waitangi_rejected_tooltip: "#header $notification_nzl_treaty_of_waitangi_rejected_name$#!\n$TOOLTIP_DELIMITER$\n$notification_nzl_treaty_of_waitangi_rejected_tooltip$"
+  notification_nzl_treaty_of_waitangi_accepted_name: "Treaty of Waitangi Accepted"
+  notification_nzl_treaty_of_waitangi_accepted_desc: "The [SCOPE.sCulture('nzl_target_culture').GetNameNoFormatting] chiefs of [SCOPE.sCountry('nzl_target').GetName] have agreed to sign the Treaty of Waitangi. Their former territory will now be administered by [SCOPE.sCountry('nzl_colony').GetName]."
+  notification_nzl_treaty_of_waitangi_accepted_tooltip: "#header $notification_nzl_treaty_of_waitangi_accepted_name$#!\n$TOOLTIP_DELIMITER$\n$notification_nzl_treaty_of_waitangi_accepted_tooltip$"
+  notification_nzl_treaty_of_waitangi_declined_name: "Treaty of Waitangi Declined"
+  notification_nzl_treaty_of_waitangi_declined_desc: "The [SCOPE.sCulture('nzl_target_culture').GetNameNoFormatting] chiefs of [SCOPE.sCountry('nzl_target').GetName] have refused to sign the Treaty of Waitangi and accept [SCOPE.sCountry('nzl_colony').GetAdjective] governorship, damaging our [concept_relations]."
+  notification_nzl_treaty_of_waitangi_declined_tooltip: "#header $notification_nzl_treaty_of_waitangi_declined_name$#!\n$TOOLTIP_DELIMITER$\n$notification_nzl_treaty_of_waitangi_declined_tooltip$"
 
   # Law amendments
   nzl_amendment_treaty_of_waitangi: "Treaty of Waitangi"

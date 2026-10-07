@@ -1,5 +1,12 @@
-﻿# Treaty of Waitangi Rejected
-nzl_treaty_of_waitangi_rejected = {
+﻿# Treaty of Waitangi Accepted
+nzl_treaty_of_waitangi_accepted = {
+	type = country
+	texture = "gfx/interface/icons/notification_icons/influence.dds"
+	notification_type = toast
+}
+
+# Treaty of Waitangi Declined
+nzl_treaty_of_waitangi_declined = {
 	type = country
 	texture = "gfx/interface/icons/notification_icons/secession.dds"
 	notification_type = toast

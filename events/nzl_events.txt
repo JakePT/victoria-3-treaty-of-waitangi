@@ -234,6 +234,13 @@ nzl.2 = {
 		ai_chance = { base = 100 }
 		default_option = no
 
+		# Notify Britain.
+		scope:nzl_overlord = {
+			hidden_effect = {
+				post_notification = nzl_treaty_of_waitangi_accepted
+			}
+		}
+
 		# Annex United Tribes to New Zealand and addd Treaty of Waitangi law amendment.
 		scope:nzl_colony = {
 			annex = ROOT
@@ -243,6 +250,10 @@ nzl.2 = {
 					sponsor = PREV.ig:ig_devout
 					type = nzl_amendment_treaty_of_waitangi
 				}
+			}
+
+			hidden_effect = {
+				post_notification = nzl_treaty_of_waitangi_accepted
 			}
 		}
 
@@ -298,12 +309,21 @@ nzl.2 = {
 					country = PREV
 				}
 			}
+
+			hidden_effect = {
+				post_notification = nzl_treaty_of_waitangi_declined
+
+				set_secret_goal = {
+					country = ROOT
+					secret_goal = dominate
+				}
+			}
 		}
 
 		# Set New Zealand's goals towards United Tribes.
-		hidden_effect = {
-			scope:nzl_colony = {
-				post_notification = nzl_treaty_of_waitangi_rejected
+		scope:nzl_colony = {
+			hidden_effect = {
+				post_notification = nzl_treaty_of_waitangi_declined
 
 				set_secret_goal = {
 					country = ROOT
